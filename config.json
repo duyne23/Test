@@ -5,7 +5,7 @@
     "MAINTENANCE_MODE": true,
     "iconUnsend": {
         "status": true,
-        "icon": "🍓"
+        "icon": "😠"
     },
     "notiGroup": true,
     "NOTIFICATION": true,
