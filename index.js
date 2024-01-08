@@ -10,7 +10,7 @@ app.listen(port);
 function startBot(message) {
     (message) ? logger(message, "BOT STARTING") : "";
 
-    const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "marisv5.js"], {
+    const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "tntdev.js"], {
         cwd: __dirname,
         stdio: "inherit",
         shell: true
