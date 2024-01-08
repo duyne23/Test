@@ -59,7 +59,7 @@ module.exports = function ({ api, models }) {
   }
   logger.loader(` ID BOT: ${api.getCurrentUserID()}`)
   logger.loader(` PREFIX: ${!global.config.PREFIX ? "Bạn chưa set prefix" : global.config.PREFIX}`)
-  logger.loader(` NAME BOT: ${(!global.config.BOTNAME) ? "This bot was made by Vtuan" : global.config.BOTNAME}`)
+  logger.loader(` NAME BOT: ${(!global.config.BOTNAME) ? "Đây là sản phẩm của TNT" : global.config.BOTNAME}`)
   logger.loader("┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛")
 
 
@@ -189,41 +189,112 @@ logger.loader(`Ping load toàn bộ commands và events • ${Date.now() - globa
   }
   setInterval(checkAndExecuteEvent, tenMinutes/10);
   return async (event) => {
+    if (event.type == "change_thread_image") api.sendMessage( ` ==== [ 𝐂𝐀̣̂𝐏 𝐍𝐇𝐀̣̂𝐓 𝐍𝐇𝐎́𝐌 ] ==== \n━━━━━━━━━[ TNTXTRICK ]━━━━━━━\n → ${event.snippet}\n→ 𝗩𝗮̀𝗼 𝗹𝘂́𝗰 : ${tan} || ${thu}`, event.threadID, event.messageID);      
+  let data = JSON.parse(fs.readFileSync(__dirname + "/../modules/commands/cache/approvedThreads.json"));
+  let chuaduyet = __dirname + "/cache/chuaduyet.json";
+  let threadInfo = await api.getThreadInfo(event.threadID);
+    let threadName = threadInfo.threadName ? `${threadInfo.threadName}` : `${await Users.getNameUser(event.threadID)}`;
+  var time = moment.tz('Asia/Ho_Chi_Minh').format('HH:mm:ss || DD/MM/YYYY'); 
+  const timeStart = Date.now();
+  const { commands } = global.client; 
+  let threadMem = threadInfo.participantIDs.length;
+  const name = await Users.getNameUser(event.senderID)
+  let uid = event.senderID;
+  let adminBot = global.config.ADMINBOT;
+  let ndhBot = global.config.NDH;
+  let pendingPath = __dirname + "/../modules/commands/cache/pendingdThreads.json";
+  if (!data.includes(event.threadID) && !adminBot.includes(event.senderID) &&!ndhBot.includes(event.senderID)) {
 
-    if (event.type === "change_thread_image") api.sendMessage(`${event.snippet}`, event.threadID);
-     switch (event.type) {
-        case "change_thread_image": 
-             if(global.config.notiGroup) {
-                  var msg = '[ CẬP NHẬT NHÓM ]\n'
-                  msg += event.snippet
-                  if (event.author == api.getCurrentUserID()) {
-                    msg = msg.replace('Bạn', global.config.BOTNAME) 
-              return api.sendMessage({
-         body: `${msg}`}, event.threadID);
-             }
-             }
-                 break;
-       case "message":
-       case "message_reply":
-       case "message_unsend":
-         handleCreateDatabase({ event });
-         handleCommand({ event });
-         handleReply({ event });
-         handleCommandEvent({ event });
-         break;
-         case "event":
-           handleEvent({ event });
-           handleRefresh({ event });
-           if(global.config.notiGroup) {
-             var msg = '[ CẬP NHẬT NHÓM ]\n'
-             msg += event.logMessageBody
-             if(event.author == api.getCurrentUserID()) {
-               msg = msg.replace('Bạn', global.config.BOTNAME)
-             }
-             return api.sendMessage({
-         body: `${msg}`}, event.threadID);
-           }
-           break;
+  //getPrefix
+  const threadSetting = (await Threads.getData(String(event.threadID))).data || {};
+
+  const prefix = (threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX;
+  //check body
+  if (event.body && event.body == `tntxtrick`) {
+  adminBot.forEach(e => {
+  api.sendMessage(`🐧 ==== [ 𝗬𝗘̂𝗨 𝗖𝗔̂̀𝗨 𝗗𝗨𝗬𝗘̣̂𝗧 ] ==== 🐧
+  ━━━━━━━━━━━━━━━━
+  [👤] → 𝗡𝗴𝘂̛𝗼̛̀𝗶 𝗚𝘂̛̉𝗶 : ${name}
+  [🌐] → 𝗟𝗶𝗻𝗸 𝗽𝗿𝗼𝗳𝗶𝗹𝗲: https://www.facebook.com/profile.php?id=${uid}
+  [👨‍👩‍👧‍👦] → 𝗡𝗵𝗼́𝗺: ${threadName}
+  ━━━━━━━━━━━━━━━━
+  [🔰] → 𝗧𝗶𝗱 : ${event.threadID}
+  [🍉] → 𝗦𝗼̂́ 𝘁𝗵𝗮̀𝗻𝗵 𝘃𝗶𝗲̂𝗻 : ${threadMem}
+  [⏰] → 𝗧𝗶𝗺𝗲 : ${time}
+  ━━━━━━━━━━━━━━━━
+  [⚜️] → Đ𝗮̃ 𝗴𝘂̛̉𝗶 𝘆𝗲̂𝘂 𝗰𝗮̂̀𝘂 đ𝘂̛𝗼̛̣𝗰 𝗱𝘂𝘆𝗲̣̂𝘁 𝗯𝗼𝘅 đ𝗲̂́𝗻 𝗯𝗮̣𝗻`, e);
+  })
+   api.sendMessage(`🍇 ==== [ 𝗚𝘂̛̉𝗶 𝘆𝗲̂𝘂 𝗰𝗮̂̀𝘂  ] ==== 🍇
+  ━━━━━━━━━━━━━━━━
+  [🍠] → 𝗡𝗴𝘂̛𝗼̛̀𝗶 𝗗𝘂̀𝗻𝗴 : ${name}
+  [🌐] → 𝗟𝗶𝗻𝗸 𝗽𝗿𝗼𝗳𝗶𝗹𝗲 : https://www.facebook.com/profile.php?id=${uid}
+  [🔰] → 𝗜𝗗 𝗻𝗵𝗼́𝗺 : ${event.threadID}
+  [⚜️] → Đ𝗮̃ 𝗴𝘂̛̉𝗶 𝘆𝗲̂𝘂 𝗰𝗮̂̀𝘂 đ𝗲̂́𝗻 : ${global.config.ADMINBOT.length} 𝗮𝗱𝗺𝗶𝗻
+  ━━━━━━━━━━━━━━━━
+  [🍉] → 𝗦𝗼̂́ 𝘁𝗵𝗮̀𝗻𝗵 𝘃𝗶𝗲̂𝗻 : ${threadMem}
+  [🥞] → 𝗟𝘂̛𝘂 𝘆́ 𝗻𝗵𝗼́𝗺 𝗱𝘂̛𝗼̛́𝗶 𝟭𝟬 𝘁𝗵𝗮̀𝗻𝗵 𝘃𝗶𝗲̂𝗻 𝘀𝗲̃ 𝗸𝗵𝗼̂𝗻𝗴 𝗱𝘂𝘆𝗲̣̂𝘁
+  [⏰] → 𝗧𝗵𝗼̛̀𝗶 𝗴𝗶𝗮𝗻 : ${time}
+  ━━━━━━━━━━━━━━━━
+  [💓] → 𝗰𝗼̀𝗻 đ𝘂̛𝗼̛̣𝗰 𝗱𝘂𝘆𝗲̣̂𝘁 𝗵𝗮𝘆 𝗸𝗵𝗼̂𝗻𝗴 𝘁𝗵𝗶̀ 𝗰𝗵𝗶̣𝘂`, event.threadID, () => {
+  let pendingData = JSON.parse(fs.readFileSync(pendingPath));
+  if (!pendingData.includes(event.threadID)) {
+    pendingData.push(event.threadID);
+  fs.writeFileSync(pendingPath, JSON.stringify(pendingData));
+  }
+  });
+  }
+  // if (event.threadID == 7349457131746039) console.log(prefix);
+  if (event.body && event.body.startsWith(prefix)) return api.sendMessage( `==== [ 𝗧𝗛𝗨𝗘̂ 𝗕𝗢𝗧 ] ====
+  𝗡𝗴𝘂̛𝗼̛̀𝗶 𝗱𝘂̀𝗻𝗴 𝗹𝗲̣̂𝗻𝗵: ${name}
+  𝗧𝗲̂𝗻 𝗕𝗼𝘁 : ${global.config.BOTNAME}
+  𝗧𝗼̂́𝗰 đ𝗼̣̂ 𝘅𝘂̛̉ 𝗹𝘆́ : ${Date.now() - timeStart} 𝗴𝗶𝗮̂𝘆
+  𝗧𝗼̂̉𝗻𝗴 𝗹𝗲̣̂𝗻𝗵 : ${commands.size}
+  𝗡𝗵𝗼́𝗺 : ${threadName}
+  𝗡𝗼̣̂𝗶 𝗱𝘂𝗻𝗴: 𝗡𝗵𝗼́𝗺 𝗯𝗮̣𝗻 𝗰𝗵𝘂̛𝗮 đ𝘂̛𝗼̛̣𝗰 𝗮𝗱𝗺𝗶𝗻 𝗰𝗵𝗼 𝘁𝗵𝘂𝗲𝗯𝗼𝘁 , đ𝗲̂̉ đ𝘂̛𝗼̛̣𝗰 𝘁𝗵𝘂𝗲𝗯𝗼𝘁 , 𝗱𝘂̀𝗻𝗴: tntxtrick 
+  Time :${time}`, event.threadID, event.messageID); 
+
+  };
+
+
+    if (event.type == "change_thread_image") api.sendMessage(`${event.snippet}`, event.threadID);
+    switch (event.type) {
+      //<--Thay đổi ảnh nhóm-->//
+          case "change_thread_image": 
+            if(global.config.notiGroup) {
+          var msg = '[ CẬP NHẬT NHÓM ]\n'
+          msg += event.snippet
+          if(event.author == api.getCurrentUserID()) {
+            msg = msg.replace('Bạn', global.config.BOTNAME)
+          }
+          return api.sendMessage({
+    body: `${msg}`}, event.threadID);
+        }
+            break;
+          //<--Nhận, xử lí dữ liệu-->//
+      case "message":
+      case "message_reply":
+      case "message_unsend":
+        handleCreateDatabase({ event });
+        handleCommand({ event });
+        handleReply({ event });
+        handleCommandEvent({ event });
+
+        break;
+      //<--Nhận tin nhắn, thông báo thay đổi nhóm-->//
+      case "event":
+        handleEvent({ event });
+        handleRefresh({ event });
+        if(global.config.notiGroup) {
+          var msg = '[ CẬP NHẬT NHÓM ]\n'
+          msg += event.logMessageBody
+          if(event.author == api.getCurrentUserID()) {
+            msg = msg.replace('Bạn', global.config.BOTNAME)
+          }
+          return api.sendMessage({
+    body: `${msg}`}, event.threadID);
+        }
+        break;
+      //<--Nhận cảm xúc-->//
       case "message_reaction":
         var { iconUnsend } = global.config
         if(iconUnsend.status && event.senderID == api.getCurrentUserID() && event.reaction == iconUnsend.icon) {
