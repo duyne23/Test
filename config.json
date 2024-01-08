@@ -13,12 +13,12 @@
     "commandDisabled": [],
     "eventDisabled": [],
     "autoClean": true,
-    "BOTNAME": " 𝙼𝚊𝚛𝚒𝚜 ",
-    "AMDIN_NAME": "Vtuan",
-    "FACEBOOK_ADMIN": "https://www.facebook.com/tddzs1tg06",
-    "PREFIX": "",
+    "BOTNAME": "TNT",
+    "AMDIN_NAME": "TNTXTRICK",
+    "FACEBOOK_ADMIN": "https://www.facebook.com/tntxtrick",
+    "PREFIX": "/",
     "ADMINBOT": [
-        "",
+        "100090168070553",
         ""
     ],
     "NDH": [],
