@@ -1,44 +1,44 @@
-# Nếu bạn muốn xuống dòng, hãy dùng\n. VD: JRT\nJRT
+# Nếu bạn muốn xuống dòng, hãy dùng\n. VD: SpermLord\nCatalizcs.
 # Sau khi thay đổi, bạn phải khởi động lại bot để có hiệu lực.
 # Đặt kí tự # ở đầu mỗi câu nếu bạn không muốn code chạy những dòng đó.
-# Thanks to JRT for translate to Vietnamese!
+# Thanks to CatalizCS for translate to Vietnamese!
 
 # mirai.js
 
 mirai.errorFormat=Module không đúng định dạng!
-mirai.nameExist=Tên module bị trùng với một module mang cùng tên khác hãy mau kiểm tra lại
-mirai.notFoundLanguage=Module %1 không hỗ trợ ngôn ngữ ngôn ngữ của bạn
-mirai.notFoundPackage=Không tìm thấy package %1 hỗ trợ module %2
+mirai.nameExist=Tên module bị trùng với một module mang cùng tên khác!
+mirai.notFoundLanguage=Modules %1 Không Hỗ Trợ Ngôn Ngữ Của Bạn
+mirai.notFoundPackage=Không tìm thấy package %1 hỗ trợ cho module %2, tiến hành cài đặt...
 mirai.cantInstallPackage=Không thể cài đặt package %1 cho module %2, lỗi: %3
 mirai.loadedPackage=Đã tải thành công toàn bộ package cho module %1
 mirai.loadedConfig=Đã tải thành công config cho module %1
 mirai.cantLoadConfig=Không thể tải config của module %1, lỗi: %2
 mirai.cantOnload=Không thể khởi chạy setup của module %1, lỗi: %1
-mirai.successLoadModule=Đã tải thành công module %1
-mirai.failLoadModule=Không thể tải thành công module %1, lỗi: %2
-mirai.finishLoadModule=Đã tải thành công %1 module commands và %2 module events
-mirai.foundPathAppstate=Đã tìm thấy file appstate
-mirai.notFoundPathAppstate=Không tìm thấy file appstate vui lòng kiểm tra lại
-mirai.checkListGban=Đang kiểm tra danh sách BANNED...
-mirai.banDevice=Hiện tại thiết bị của bạn đã bị ban khỏi Bot JRT, liên hệ tới facebook https://fb.me/NHD.JRT.262!!!
+mirai.successLoadModule=𝐒𝐮𝐜𝐜𝐞𝐬𝐬 𝐋𝐨𝐚𝐝 𝐌𝐨𝐝𝐮𝐥𝐞𝐬 %1
+mirai.failLoadModule=𝐅𝐚𝐢𝐥 %1
+mirai.finishLoadModule=𝐒𝐮𝐜𝐜𝐞𝐬𝐬 𝐋𝐨𝐚𝐝 𝐌𝐨𝐝𝐮𝐥𝐞𝐬 + 𝐄𝐯𝐞𝐧𝐭 𝐅𝐢𝐥𝐞\n𝐌𝐨𝐝𝐮𝐥𝐞𝐬 %1\n𝐄𝐯𝐞𝐧𝐭 %2
+mirai.foundPathAppstate=Đã tìm thấy file Appstate
+mirai.notFoundPathAppstate=Không tìm thấy file Appstate l, vui lòng kiểm tra lại
+mirai.checkListGban=Tiến hành kiểm tra danh sách Global ban
+mirai.banDevice=Hiện tại thiết bị của bạn đã bị ban khỏi miraiproject, liên hệ tới facebook https://www.facebook.com/hvnh.2702 để biết thêm thông tin chi tiết hoặc xin key unban, nếu bạn đã có key unban hãy điền vào bên dưới!
 mirai.keyNotSameFormat=Dữ liệu bạn nhập phải là một dãy số bao gồm 6 chữ số!
 mirai.codeInputExpired=Code bạn nhập không trùng khớp hoặc đã hết hạn!
-mirai.unbanDeviceSuccess=Facebook ID của bạn đã được gỡ ban, hãy khởi động lại để có thể tiếp tục sử dụng BOT MARIS!!!
-mirai.userBanned=Bạn đã bị ban khỏi Bot MARIS vào lúc %1 với lý do: %2.\nVui lòng liên hệ ADMIN qua:\n📌FB: Https://www.facebook.com/tddzs1tg06. để biết thêm chi tiết!
-mirai.finishCheckListGban=Đã kiểm tra xong danh sách BANNED
+mirai.unbanDeviceSuccess=Thiết bị của bạn đã được gỡ ban, hãy khởi động lại để có thể tiếp tục sử dụng
+mirai.userBanned=Bạn đã bị ban khỏi miraiproject vào lúc %1 với lý do: %2. Liên hệ tới facebook https://www.facebook.com/hvnh.2702 để biết thêm chi tiết!
+mirai.finishCheckListGban=Đã kiểm tra xong danh sách global ban
 mirai.handleListenError=handleListener đã xảy ra một số lỗi không mong muốn, lỗi: %1
-mirai.warningSourceCode=\nBOT MARIS update complete!!!
+mirai.warningSourceCode=PHÁT HIỆN SOURCE CODE ĐÃ BỊ THAY ĐỔI CẤU TRÚC, HÃY DỪNG LẠI NGAY!
 mirai.refreshListen=Đã làm mới lại handleListener...
-mirai.successConnectDatabase=Dữ liệu Bot MARIS đã được kết nối thành công!!
-mirai.failConnectDatabase=Dữ liệu Bot MARIS đã được kết nối thất bại!!, lỗi: %1. Vui lòng hãy kiểm tra lại!!
+mirai.successConnectDatabase=Kết nối đến cơ sở dữ liệu thành công
+mirai.failConnectDatabase=Kết nối đến cơ sở dữ liệu thất bại, lỗi: %1
 
 # includes/listen.js
 
-listen.startLoadEnvironment=Tiến hành khởi tạo cấu trúc bot!
-listen.loadedEnvironmentThread=Đã khởi tạo thành công cấu trúc nhóm!
-listen.loadedEnvironmentUser=Đã khởi tạo thành công cấu trúc người dùng!
-listen.successLoadEnvironment=Đã khởi tạo thành công cấu trúc bot thành công!!!
-listen.failLoadEnvironment=Khởi tạo cấu trúc bot không thành công, lỗi: %1
+listen.startLoadEnvironment=Tiến hành tải dữ liệu
+listen.loadedEnvironmentThread=Tiến hành tải dữ liệu các nhóm
+listen.loadedEnvironmentUser=Tiến hành tải dữ liệu các người dùng
+listen.successLoadEnvironment=Khởi tạo dữ liệu thành công
+listen.failLoadEnvironment=Khởi tạo dữ liệu không thành công, lỗi: %1
 
 # includes/controller/currencies.js
 
@@ -58,17 +58,17 @@ users.needObject=Phải là một Object
 
 # includes/handle/handleCommand.js
 
-handleCommand.userBanned=Hiện tại bạn đang bị cấm sử dụng bot!\nLiên hệ FB: https://www.facebook.com/tddzs1tg06 để biết thêm chi tiết.\n%1\n%2
-handleCommand.threadBanned=Hiện tại nhóm của bạn đang bị cấm sử dụng bot!\nVui lòng liên hệ ADMIN qua:\n📌FB: https://www.facebook.com/tddzs1tg06.\nĐể có thể xin và sử dụng lại bot.\n%1\n%2
-handleCommand.commandNotExist= Lệnh bạn sử dụng không tồn tại, có phải là lệnh "%1" hay không?
-handleCommand.commandThreadBanned=Nhóm bạn đã bị cấm sử dụng lệnh "%1"\nVui lòng liên hệ ADMIN qua:\n📌FB: https://www.facebook.com/tddzs1tg06
-handleCommand.commandUserBanned=Bạn đã bị cấm sử dụng lệnh "%1"\nVui lòng liên hệ ADMIN qua:\n📌FB: https://www.facebook.com/tddzs1tg06
-handleCommand.threadNotAllowNSFW=Nhóm của bạn không được phép sử dụng những lệnh cấm NSFW vì nó chứa nội dung 18+ 
+handleCommand.userBanned==== 『 𝗖𝗔̂́𝗠 𝗦𝗨̛̉ 𝗗𝗨̣𝗡𝗚 』 ====\n━━━━━━━━━━━━━━━━━━\n\n→ 𝗛𝗶𝗲̣̂𝗻 𝘁𝗮̣𝗶 𝗻𝗵𝗼́𝗺 𝗰𝘂̉𝗮 𝗯𝗮̣𝗻 đ𝗮𝗻𝗴 𝗯𝗶̣ 𝗰𝗮̂́𝗺 𝘀𝘂̛̉ 𝗱𝘂̣𝗻𝗴 𝗯𝗼𝘁 🐧\n%1\n%2\n→ 𝗩𝘂𝗶 𝗹𝗼̀𝗻𝗴 𝗹𝗶𝗲̂𝗻 𝗵𝗲̣̂ 𝘁𝗼̛́𝗶 𝗮𝗱𝗺𝗶𝗻 đ𝗲̂̉ đ𝘂̛𝗼̛̣𝗰 𝗴𝗼̛̃ 𝗯𝗮𝗻 💓\n→ 𝗟𝗶𝗻𝗸 𝗔𝗱𝗺𝗶𝗻: m.me/tntxtrick 🌸
+handleCommand.threadBanned==== 『 𝗖𝗔̂́𝗠 𝗦𝗨̛̉ 𝗗𝗨̣𝗡𝗚 』 ====\n━━━━━━━━━━━━━━━━━━\n\n→ 𝗛𝗶𝗲̣̂𝗻 𝘁𝗮̣𝗶 𝗻𝗵𝗼́𝗺 𝗰𝘂̉𝗮 𝗯𝗮̣𝗻 đ𝗮𝗻𝗴 𝗯𝗶̣ 𝗰𝗮̂́𝗺 𝘀𝘂̛̉ 𝗱𝘂̣𝗻𝗴 𝗯𝗼𝘁 🐧\n%1\n%2\n→ 𝗩𝘂𝗶 𝗹𝗼̀𝗻𝗴 𝗹𝗶𝗲̂𝗻 𝗵𝗲̣̂ 𝘁𝗼̛́𝗶 𝗮𝗱𝗺𝗶𝗻 đ𝗲̂̉ đ𝘂̛𝗼̛̣𝗰 𝗴𝗼̛̃ 𝗯𝗮𝗻 💓\n→ 𝗟𝗶𝗻𝗸 𝗔𝗱𝗺𝗶𝗻: m.me/tntxtrick 🌸
+handleCommand.commandNotExist===== [ 𝗦𝗔𝗜 𝗟𝗘̣̂𝗡𝗛 ] ====\n━━━━━━━━━━━━━━━━━━\n → 𝗡𝗴𝘂̛𝗼̛̀𝗶 𝗱𝘂̀𝗻𝗴 : %7\n → 𝗟𝗲̣̂𝗻𝗵 𝗖𝘂̉𝗮 𝗕𝗮̣𝗻 𝗦𝘂̛̉ 𝗗𝘂̣𝗻𝗴 𝗞𝗵𝗼̂𝗻𝗴 𝗧𝗼̂̀𝗻 𝗧𝗮̣𝗶 𝗧𝗿𝗲̂𝗻 𝗛𝗲̣̂ 𝗧𝗵𝗼̂́𝗻𝗴 🐧\n → 𝗖𝗼́ 𝗣𝗵𝗮̉𝗶 𝗟𝗲̣̂𝗻𝗵 ( %1 ) 𝗕𝗮̣𝗻 Đ𝗮𝗻𝗴 𝗖𝗮̂̀𝗻 𝗧𝗶̀𝗺 𝗛𝗮𝘆 𝗞𝗵𝗼̂𝗻𝗴\n → 𝗧𝗵𝗶́𝗻𝗵 : %2\n━━━━━━━━━━━━━━━━━━\n → 𝗕𝗼𝘁 đ𝗮̃ 𝗼𝗻𝗹𝗶𝗻𝗲 đ𝘂̛𝗼̛̣𝗰 : %3 𝗴𝗶𝗼̛̀ %4 𝗽𝗵𝘂́𝘁 %5 𝗴𝗶𝗮̂𝘆💓\n → 𝗧𝗶𝗺𝗲 : %6
+handleCommand.commandThreadBanned=Nhóm bạn đã bị cấm sử dụng lệnh "%1"
+handleCommand.commandUserBanned=Bạn đã bị cấm sử dụng lệnh "%1"
+handleCommand.threadNotAllowNSFW===== 『 𝗟𝗘̣̂𝗡𝗛 𝟭𝟴+ 』 ====\n━━━━━━━━━━━━━━━━━━\n → 𝗡𝗵𝗼́𝗺 𝗰𝘂̉𝗮 𝗯𝗮̣𝗻 𝗸𝗵𝗼̂𝗻𝗴 đ𝘂̛𝗼̛̣𝗰 𝗽𝗵𝗲́𝗽 𝘀𝘂̛̉ 𝗱𝘂̣𝗻𝗴 𝗻𝗵𝘂̛̃𝗻𝗴 𝗹𝗲̣̂𝗻𝗵 𝗡𝗦𝗙𝗪\n → 𝗡𝗲̂́𝘂 𝗺𝘂𝗼̂́𝗻 𝘀𝘂̛̉ 𝗱𝘂̣𝗻𝗴 𝘅𝗶𝗻 𝗵𝗮̃𝘆 𝗹𝗶𝗲̂𝗻 𝗵𝗲̣̂ 𝘁𝗼̛́𝗶 𝗮𝗱𝗺𝗶𝗻 đ𝗲̂̉ đ𝘂̛𝗼̛̣𝗰 𝘀𝘂̛̉ 𝗱𝘂̣𝗻𝗴💓\n → 𝗟𝗶𝗻𝗸 𝗔𝗱𝗺𝗶𝗻 : https://www.facebook.com/tntxtrick\n━━━━━━━━━━━━━━━━━━\n → 𝗖𝗵𝘂́𝗰 𝗯𝗮̣𝗻 𝗱𝘂̀𝗻𝗴 𝗯𝗼𝘁 𝘃𝘂𝗶 𝘃𝗲̉
 handleCommand.cantGetInfoThread=Không thể lấy thông tin của nhóm, lỗi: %1
-handleCommand.permssionNotEnough= Xin lỗi vì bạn là thành nên lệnh  "%1" sẽ không hoạt động. Chỉ có quản trị viên hoặc ADMIN dùng được!!!
+handleCommand.permssionNotEnough===== 『 𝗟𝗘̣̂𝗡𝗛 𝗔𝗗𝗠𝗜𝗡 』 ====\n━━━━━━━━━━━━━━━━━━\n[🍍] → 𝗡𝗴𝘂̛𝗼̛̀𝗶 𝗱𝘂̀𝗻𝗴 : %6\n[🥐] → 𝗫𝗶𝗻 𝗹𝗼̂̃𝗶 𝗯𝗮̣𝗻 𝗸𝗵𝗼̂𝗻𝗴 đ𝘂̉ 𝗾𝘂𝘆𝗲̂̀𝗻 𝗵𝗮̣𝗻𝗴 đ𝗲̂̉ 𝘀𝘂̛̉ 𝗱𝘂̣𝗻𝗴 𝗹𝗲̣̂𝗻𝗵 "%1" 🐧\n[🥯] → 𝗖𝗵𝗶̉ 𝗰𝗼́ 𝗮𝗱𝗺𝗶𝗻 𝘃𝗮̀ 𝗻𝗱𝗵 𝗺𝗼̛́𝗶 𝗰𝗼́ 𝘁𝗵𝗲̂̉ 𝘀𝗮̀𝗶 đ𝘂̛𝗼̛̣𝗰 𝗹𝗲̣̂𝗻𝗵 𝗻𝗮̀𝘆 💓\n[🍞] → 𝗧𝗵𝗶́𝗻𝗵 : %7\n[🌽] → 𝗠𝘂𝗼̂́𝗻 𝗱𝘂̀𝗻𝗴 𝘁𝗵𝗶̀ 𝗹𝗶𝗲̂𝗻 𝗵𝗲̣̂ 𝗮𝗱𝗺𝗶𝗻 𝗺𝘂𝗮 𝗳𝗶𝗹𝗲\n[🌐] → 𝗟𝗶𝗻𝗸 𝗔𝗱𝗺𝗶𝗻 : https://www.facebook.com/tntxtrick\n[💓] → 𝗖𝗵𝘂́𝗰 : %6 𝗱𝘂̀𝗻𝗴 𝗯𝗼𝘁 𝘃𝘂𝗶 𝘃𝗲̉\n━━━━━━━━━━━━━━━━━━\n[🍎] → 𝗕𝗼𝘁 đ𝗮̃ 𝗼𝗻𝗹𝗶𝗻𝗲 đ𝘂̛𝗼̛̣𝗰 : %2 𝗴𝗶𝗼̛̀ %3 𝗽𝗵𝘂́𝘁 %4 𝗴𝗶𝗮̂𝘆💓\n[🫒] → 𝗧𝗶𝗺𝗲 : %5
 handleCommand.cantSetMessageReaction=Đã có lỗi xảy ra không mong muốn tại setMessageReaction, lỗi: %1
 handleCommand.notFoundLanguage=Không tìm thấy ngôn ngữ hỗ trợ cho module %1s
-handleCommand.executeCommand=» %1 « Lệnh sử dụng: %2 bởi người dùng: %3 tại nhóm: %4 | Args đi kèm: %5 | Thời gian xử lý: %6ms
+handleCommand.executeCommand=[ %1 ] Lệnh sử dụng: %2 bởi người dùng: %3 tại nhóm: %4 | Args đi kèm: %5 | Thời gian xử lý: %6ms
 handleCommand.commandError=Đã xảy ra lỗi không mong muốn trong khi thực thi lệnh %1, lỗi: %2
 
 # includes/handle/handleCommandEvent.js
@@ -77,12 +77,12 @@ handleCommandEvent.moduleError=Đã xảy ra lỗi không mong muốn tại lệ
 
 # includes/handle/handleCreateDatabase.js
 
-handleCreateDatabase.newThread=THREAD ID » %1
-handleCreateDatabase.newUser=USER ID » %1
+handleCreateDatabase.newThread=Loaded Nhóm Mới: %1
+handleCreateDatabase.newUser=Loaded new user: %1
 
 # includes/handle/handleEvent.js
 
-handleEvent.executeEvent=» %1 « Event được thực thi: %2 tại nhóm: %3 | Thời gian xử lý: %4ms
+handleEvent.executeEvent=[ %1 ] Event được thực thi: %2 tại nhóm: %3 | Thời gian xử lý: %4ms
 handleEvent.eventError=Đã xảy ra lỗi không mong muốn trong khi thực thi event %1, lỗi: %12
 
 # includes/handle/handleReaction.js
@@ -101,4 +101,4 @@ handleSchedule.exectuteError=Đã xảy ra lỗi không mong muốn trong lúc s
 
 # utils/index.js
 
-utils.throwError= » Dùng lệnh sai rồi bạn ơi vui lòng sử dụng %1help %2 để biết thêm hướng dẫn sử dụng bot.\nNếu bạn thấy khó hiểu quá vui lòng liên hệ ADMIN qua:FB:https://www.facebook.com/tddzs1tg06.\nXin cảm ơn!
+utils.throwError==== 『 𝗠𝗢𝗗𝗘 』 ====\n━━━━━━━━━━━━━━━━━━\n\n→ 𝗟𝗲̣̂𝗻𝗵 𝗯𝗮̣𝗻 đ𝗮𝗻𝗴 𝘀𝘂̛̉ 𝗱𝘂̣𝗻𝗴 𝗸𝗵𝗼̂𝗻𝗴 đ𝘂́𝗻𝗴 𝗰𝘂́ 𝗽𝗵𝗮́𝗽, 𝘃𝘂𝗶 𝗹𝗼̀𝗻𝗴 𝘀𝘂̛̉ 𝗱𝘂̣𝗻𝗴 %1𝗵𝗲𝗹𝗽 %2 đ𝗲̂̉ 𝗯𝗶𝗲̂́𝘁 𝘁𝗵𝗲̂𝗺 𝗰𝗵𝗶 𝘁𝗶𝗲̂́𝘁 𝗰𝗮́𝗰𝗵 𝘀𝘂̛̉ 𝗱𝘂̣𝗻𝗴 💓
