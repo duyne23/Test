@@ -1,92 +1,62 @@
-  module.exports.config = {
-   name: "console",
-   version: "1.1.0",
-   hasPermssion: 2,
-   credits: "Niiozic",//Quất đz làm chống lag
-   description: "Làm cho console đẹp hơn + mod chống spam lag console",
-   commandCategory: "Hệ thống",
-   usages: "console",
-   cooldowns: 30
-  };
+const chalk = require('chalk');
+const moment = require("moment-timezone");
+const SPAM_THRESHOLD = 10; // Số lượng tin nhắn để xác định spam
+const SPAM_TIMEFRAME = 3000; // Thời gian trong ms để kiểm tra spam (3 giây)
+const LOG_COOLDOWN = 20000; // Thời gian trong ms để tạm dừng log (20 giây)
+let messageCounts = {};
+let isSpamming = false;
+let cooldownTimer;
 
-  var isConsoleDisabled = false,
-   num = 0,
-   max = 15,
-   timeStamp = 0;
-  function disableConsole(cooldowns) {
-   console.log(`Kích hoạt chế độ chống lag console trong ${cooldowns}s`);
-   isConsoleDisabled = true;
-   setTimeout(function () {
-   isConsoleDisabled = false;
-   console.log("Tắt chế độ chống lag ✅");
-   }, cooldowns * 1000);
+module.exports.config = {
+  name: "console",
+  version: "1.0.0",
+  hasPermssion: 3,
+  credits: "Vtuan",
+  description: "",
+  commandCategory: "Hệ Thống",
+  usages: "",
+  cooldowns: 0
+};
+
+module.exports.handleEvent = async function ({ api, event, Users }) {
+  const { threadID, senderID } = event;
+  if (senderID === global.data.botID || global.data.threadData.get(threadID)?.console === true) return;
+
+  if (!messageCounts[threadID]) {
+    messageCounts[threadID] = { count: 0, lastMessageTime: Date.now() };
   }
+  const now = Date.now();
+  let threadMessageCount = messageCounts[threadID];
+  if (now - threadMessageCount.lastMessageTime <= SPAM_TIMEFRAME) {
+    threadMessageCount.count++;
+    if (threadMessageCount.count > SPAM_THRESHOLD) {
+      if (!isSpamming) {
+        console.log(chalk.red('Cảnh báo spam: console bị tạm dừng.'));
+        isSpamming = true;
+        if (cooldownTimer) clearTimeout(cooldownTimer);
+        cooldownTimer = setTimeout(() => {
+          console.log(chalk.green('console đã được kích hoạt trở lại.'));
+          isSpamming = false;
+        }, LOG_COOLDOWN);
+      }
+      threadMessageCount.lastMessageTime = now;
+      return;
+    }
+  } else {
+    threadMessageCount.count = 1;
+    threadMessageCount.lastMessageTime = now;
+  }
+  if (!isSpamming) {
+    const threadName = global.data.threadInfo.get(threadID)?.threadName || "Tên nhóm không xác định";
+    const userName = await Users.getNameUser(senderID);
+    const messageContent = event.body || "Ảnh/Video hoặc ký tự đặc biệt";
+    console.log(
+      chalk.hex("#DEADED")(`\n———————————————————————\nNhóm: ${threadName}`) + " \n" +
+      chalk.hex("#C0FFEE")(`Người dùng: ${userName}`) + " \n " +
+      chalk.hex("#FFC0CB")(`Nội dung: ${messageContent}`) + "\n" +
+      chalk.hex("#FFFF00")(`Thời gian: ${moment.tz("Asia/Ho_Chi_Minh").format("LLLL")}\n———————————————————————\n`)
+    );
+  }
+};
 
-  module.exports.handleEvent = async function ({
-   api,
-   args,
-   Users,
-   event
-  }) {
-   let {
-   messageID,
-   threadID,
-   senderID,
-   mentions
-   } = event;
-   try {
-   const dateNow = Date.now();
-   // if (dateNow - timeStamp < this.config.cooldowns * 1000) return;
-   if (isConsoleDisabled) {
-   return;
-   }
-
-   const l = require("chalk");
-   const m = require("moment-timezone");
-   var n = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss DD/MM/YYYY");
-   const o = global.data.threadData.get(event.threadID) || {};
-   if (typeof o.console !== "undefined" && o.console == true) {
-   return;
-   }
-   ;
-   if (event.senderID == global.data.botID) {
-   return;
-   }
-   ;
-   num++
-   const threadInfo = await api.getThreadInfo(event.threadID)
-   var namebox = threadInfo.threadName || "Chưa đặt tên";
-   var nameUser = await Users.getNameUser(event.senderID);
-   var msg = event.body || "Ảnh, video hoặc kí tự đặc biệt";
-
-     
-   console.log(`${l.hex("#0000FF")("◆━━━━━━━━━━◆━━━━━━━━━◆◆━━━━━━━━◆━━━━━━━━━━◆")}\n${l.hex("#00FF00")("Nhóm Tên: ")} ${l.hex("#0000FF")(`${namebox}`)}\n${l.hex("#0000FF")(`ID Box: ${event.threadID}`)}\n${l.hex("#00EE00")("User Name: ")} ${nameUser}\nID User: ${event.senderID}\n${l.hex("#00FF00")(`Content: `)} ${l.hex("#33CCFF")(`${msg}`)}\n${l.hex("#0000FF")("◆━━━━━━━━━━◆━━━━━━━━━◆◆━━━━━━━━◆━━━━━━━━━━◆")}`);
-
-
-     
-   timeStamp = dateNow;
-   if(Date.now() - timeStamp > 1000) num = 0
-   if(Date.now() - timeStamp < 1000){
-   if(num >= max){
-   num = 0
-   disableConsole(this.config.cooldowns);
-   }
-   }
-   // Xin lỗi vì quá đẹp gái
-   // ...
-   // quất đẹp trai như dog (nó xàm)
-
-   } catch (e) {
-   console.log(e);
-   }
-  };
-
-  module.exports.run = async function ({
-   api: a,
-   args: b,
-   Users: c,
-   event: d,
-   Threads: e,
-   utils: f,
-   client: g
-  }) {};
+module.exports.run = async function ({ api, args, Users, event, Threads, utils, client }) {};
