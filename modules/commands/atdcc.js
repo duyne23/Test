@@ -23,7 +23,7 @@ module.exports.handleEvent = async function ({ api, event, Users }) {
 
     if (
         body === undefined ||
-        (!body.includes('https://www.instagram.com/reel/') && !body.includes('https://www.instagram.com/p/')) ||
+        (!body.includes('https://www.capcut.com/template-detail/') && !body.includes('https://www.capcut.com/t/')) ||
         senderID == api.getCurrentUserID() ||
         senderID == ''
     ) {
