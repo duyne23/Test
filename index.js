@@ -6,6 +6,10 @@ const app = express();
 const port = process.env.PORT || 2007;
 app.listen(port);
 
+app.get('/', function(req, res) {
+res.sendFile(path.join(__dirname, '/index.html'));
+ });
+app.listen(port);
 
 function startBot(message) {
     (message) ? logger(message, "BOT STARTING") : "";
