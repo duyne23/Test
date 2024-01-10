@@ -76,7 +76,7 @@ const moment = require("moment-timezone");
         }
         msg += ` ➜ 𝗦𝗼̂́ 𝗹𝗲̣̂𝗻𝗵 𝗵𝗶𝗲̣̂𝗻 𝘁𝗮̣𝗶 : ${cmds.size}\n ➜ 𝗕𝗮̣𝗻 𝘁𝗵𝗮̉ 𝗰𝗮̉𝗺 𝘅𝘂́𝗰 "❤️" 𝗻𝗲̂́𝘂 𝗺𝘂𝗼̂́𝗻 𝘅𝗲𝗺 𝘁𝗵𝗼̂𝗻𝗴 𝘁𝗶𝗻 𝗵𝗲̣̂ 𝘁𝗵𝗼̂́𝗻𝗴 𝗯𝗼𝘁\n━━━━━━━━━━━━━━━━━━\n ➜ 𝗖𝗮́𝗰𝗵 𝘀𝘂̛̉ 𝗱𝘂̣𝗻𝗴: 𝗱𝘂̀𝗻𝗴 "${prefix}𝗵𝗲𝗹𝗽 + 𝘁𝗲̂𝗻 𝗹𝗲̣̂𝗻𝗵/all" đ𝗲̂̉ 𝘅𝗲𝗺 𝗰𝗵𝗶 𝘁𝗶𝗲̂́𝘁 𝗰𝗮́𝗰𝗵 𝗱𝘂̀𝗻𝗴 𝗹𝗲̣̂𝗻𝗵\nTime: ${timeNow}`
         api.sendMessage({body: msg1 + msg, attachment: (await global.nodemodule["axios"]({
-url: (await global.nodemodule["axios"]('https://api-anh.chaocacbannhe.repl.co/phongcanh')).data.data,
+url: (await global.nodemodule["axios"]('https://736d4ec6-134f-49d0-b89e-2ed89e6b1c6d-00-3fmflttuj7k7a.worf.replit.dev/images/girl')).data.data,
 method: "GET",
 responseType: "stream"
 })).data
