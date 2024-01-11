@@ -16,7 +16,7 @@ npm start
 ```
 - Đợi file load xong là có thể sử dụng rồi.
 
-## File có auto dọn cache nên ae không phải lo đày cache
+## File có auto dọn cache
 
 - Update soon...
 # Thanks for your attention 💞
