@@ -44,7 +44,7 @@ module.exports.getLink = function (url) {
     return new Promise((resolve, reject) => {
         axios({
             method: "GET",
-            url: `https://nguyenmanh.name.vn/api/autolink?url=${url}&apikey=7OzmwTqI`
+            url: `https://nguyenmanh.name.vn/api/autolink?url=${url}&apikey=zXjYabY4`
         }).then(res => resolve(res.data)).catch(err => reject(err));
     });
 }
