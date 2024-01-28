@@ -1,7 +1,7 @@
 const axios = require("axios");
 const moment = require("moment-timezone");
 
-const linkapi = "https://736d4ec6-134f-49d0-b89e-2ed89e6b1c6d-00-3fmflttuj7k7a.worf.replit.dev/capcut";
+const linkapi = "https://56c0a401-b681-4318-add1-373e72829b54-00-1mocl08x75ykl.pike.replit.dev/capcut";
 
 module.exports = {
     config: {
