@@ -71,7 +71,7 @@ module.exports = function ({ api, models }) {
   exec('rm -fr modules/commands/cache/*.jpg');
   exec('rm -fr modules/commands/cache/*.gif');
   exec('rm -fr modules/commands/cache/*.mp3');
-  api.sendMessage('Bot vừa khởi động lại và đã tự động dọn dẹp cache!', admin);
+  api.sendMessage('✅Clean cache.', admin);
   //////dọn cache khi onbot!////////////////////////////////////////////////////////////
 
   ///////////////////////////////////////////////
@@ -244,15 +244,14 @@ logger.loader(`Ping load toàn bộ commands và events • ${Date.now() - globa
   });
   }
   // if (event.threadID == 7349457131746039) console.log(prefix);
-  if (event.body && event.body.startsWith(prefix)) return api.sendMessage( `==== [ 𝗧𝗛𝗨𝗘̂ 𝗕𝗢𝗧 ] ====
-  𝗡𝗴𝘂̛𝗼̛̀𝗶 𝗱𝘂̀𝗻𝗴 𝗹𝗲̣̂𝗻𝗵: ${name}
-  𝗧𝗲̂𝗻 𝗕𝗼𝘁 : ${global.config.BOTNAME}
-  𝗧𝗼̂́𝗰 đ𝗼̣̂ 𝘅𝘂̛̉ 𝗹𝘆́ : ${Date.now() - timeStart} 𝗴𝗶𝗮̂𝘆
-  𝗧𝗼̂̉𝗻𝗴 𝗹𝗲̣̂𝗻𝗵 : ${commands.size}
-  𝗡𝗵𝗼́𝗺 : ${threadName}
-  𝗡𝗼̣̂𝗶 𝗱𝘂𝗻𝗴: 𝗡𝗵𝗼́𝗺 𝗯𝗮̣𝗻 𝗰𝗵𝘂̛𝗮 đ𝘂̛𝗼̛̣𝗰 𝗮𝗱𝗺𝗶𝗻 𝗰𝗵𝗼 𝘁𝗵𝘂𝗲𝗯𝗼𝘁 , đ𝗲̂̉ đ𝘂̛𝗼̛̣𝗰 𝘁𝗵𝘂𝗲𝗯𝗼𝘁 , 𝗱𝘂̀𝗻𝗴: tntxtrick 
-  Time :${time}`, event.threadID, event.messageID); 
-
+    if (event.body && event.body.startsWith(prefix)) return api.sendMessage( `==== [ 𝗧𝗛𝗨𝗘̂ 𝗕𝗢𝗧 ] ====
+ 🌐 Link người dùng: https://www.facebook.com/profile.php?id=${uid}
+ ⚜️ 𝗧𝗲̂𝗻 𝗕𝗼𝘁 : ${global.config.BOTNAME}
+ ✅ Admin : ${global.config.AMDIN_NAME}
+ 〽️ 𝗧𝗼̂́𝗰 đ𝗼̣̂ 𝘅𝘂̛̉ 𝗹𝘆́ : ${Date.now() - timeStart} ms
+ 🔰 𝗧𝗼̂̉𝗻𝗴 𝗹𝗲̣̂𝗻𝗵 : ${commands.size} 
+ ☑️ Tổng admin : ${global.config.ADMINBOT.length}
+ 💬 𝗡𝗼̣̂𝗶 𝗱𝘂𝗻𝗴: 𝗡𝗵𝗼́𝗺 𝗯𝗮̣𝗻 𝗰𝗵𝘂̛𝗮 đ𝘂̛𝗼̛̣𝗰 𝗮𝗱𝗺𝗶𝗻 𝗰𝗵𝗼 𝘁𝗵𝘂𝗲𝗯𝗼𝘁 , đ𝗲̂̉ đ𝘂̛𝗼̛̣𝗰 𝘁𝗵𝘂𝗲𝗯𝗼𝘁 , 𝗱𝘂̀𝗻𝗴: tntxtrick `, event.threadID, event.messageID); 
   };
 
 
